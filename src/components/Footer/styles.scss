@@ -12,9 +12,32 @@
 
 	.seal img {
 		width: 145px;
+		margin-bottom: 50px;
 	}
 
 	.social-icon:nth-child(1n + 2) {
 		margin-left: 1rem;
+	}
+}
+
+@media (max-width: 430px) {
+	.footer {
+		flex-direction: column;
+		padding: 2rem 0 3rem;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: calc(100% - 4rem);
+			top: 0;
+			height: 1px;
+			background-color: $white;
+			margin-bottom: 1rem;
+		}
+
+		.seal img {
+			margin-bottom: 1.75rem;
+		}
 	}
 }
