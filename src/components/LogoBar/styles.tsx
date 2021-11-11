@@ -41,6 +41,18 @@ export const LogoBarText = styled.h3`
 `;
 export const Separator = styled.i`
 	text-align: center;
+	> :nth-child(2) {
+		display: none;
+	}
+
+	@media (max-width: 930px) {
+		> :nth-child(1) {
+			display: none;
+		}
+		> :nth-child(2) {
+			display: initial;
+		}
+	}
 `;
 
 type LogoProps = {

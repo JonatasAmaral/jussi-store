@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import Favicon from "~/assets/jussi-dots-separator.svg";
 
 import {
 	LogoBarSection,
@@ -25,6 +26,10 @@ export function LogoBar(props: PropsType) {
 				<LogoBarText>Nossas principais lojas VTEX</LogoBarText>
 				<Separator>
 					<FaLongArrowAltRight />
+					<img
+						src={Favicon}
+						style={{ margin: 0, filter: "saturate(0) brightness(.5)" }}
+					/>
 				</Separator>
 				<LogoBox
 					src={logoBrastemp}
