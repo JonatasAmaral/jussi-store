@@ -35,6 +35,14 @@ export const LogoBarWrapper = styled.div`
 			margin-bottom: 2rem;
 		}
 	}
+	@media (max-width: 670px) {
+		padding-left: 5rem;
+		padding-right: 5rem;
+		justify-content: space-evenly;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
 `;
 export const LogoBarText = styled.h3`
 	font-size: 1rem;
