@@ -22,6 +22,11 @@ export const ContactInfoSection = styled.section`
 	padding: 6em 3rem;
 	color: white;
 	text-align: center;
+
+	@media (max-width: 530px) {
+		font-size: 1.5rem;
+		padding: 3em 2rem;
+	}
 `;
 export const Callout = styled.h3`
 	font-size: inherit;
@@ -39,6 +44,11 @@ export const MailLink = styled(MailOnLink)`
 	padding: 1rem 0;
 	color: white !important;
 	font-size: 2rem;
+
+	@media (max-width: 530px) {
+		font-size: 1.5rem;
+		word-wrap: break-word;
+	}
 
 	&:not(:hover) {
 		text-decoration: none;
