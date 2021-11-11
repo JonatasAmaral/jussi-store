@@ -18,6 +18,23 @@ export const LogoBarWrapper = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
+	flex-wrap: wrap;
+
+	@media (max-width: 930px) {
+		padding-bottom: 0;
+		h3,
+		> i {
+			width: 100%;
+			text-align: center;
+		}
+		i {
+			margin-top: -0.5rem;
+			margin-bottom: 2rem;
+		}
+		img {
+			margin-bottom: 2rem;
+		}
+	}
 `;
 export const LogoBarText = styled.h3`
 	font-size: 1rem;
