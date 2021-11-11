@@ -1,6 +1,7 @@
 import React from "react";
 
 import JussiImage from "~/assets/image-jussi.jpg";
+import Button from "../Button";
 
 import "./styles.scss";
 
@@ -21,9 +22,17 @@ export function JussiSession(props: PropsType) {
 						é organizada em 6 especialidades: Product Managamenet, User
 						Experience Design, SEO, Tecnologia, Agile e User Behavior Analytics.
 					</p>
-					<a href="https://jussi.com.br/about.html" className="button">
-						Conheça a Jüssi
-					</a>
+					<Button
+						title="Conheça a Jüssi"
+						url={undefined}
+						action={() => {
+							alert("nada");
+						}}
+					/>
+					{/* <Button
+						title="Conheça a Jüssi"
+						url="https://jussi.com.br/about.html"
+					/> */}
 				</div>
 				<div className="img">
 					<img
