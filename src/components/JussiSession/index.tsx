@@ -25,10 +25,12 @@ export function JussiSession(props: PropsType) {
 						Conheça a Jüssi
 					</a>
 				</div>
-				<img
-					src={JussiImage}
-					alt="Balcão de atendimento em um escritório da Jussi, de cor branca, com um logo em letra caixa preta, com retroiluminação azul"
-				/>
+				<div className="img">
+					<img
+						src={JussiImage}
+						alt="Balcão de atendimento em um escritório da Jussi, de cor branca, com um logo em letra caixa preta, com retroiluminação azul"
+					/>
+				</div>
 			</div>
 		</section>
 	);
