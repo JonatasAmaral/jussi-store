@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import react from "@vitejs/plugin-react";
+import reactSvgPlugin from "vite-plugin-react-svg";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,5 +10,5 @@ export default defineConfig({
 			"~": resolve(__dirname, "src"),
 		},
 	},
-	plugins: [react()],
+	plugins: [react(), reactSvgPlugin({ defaultExport: "component" })],
 });
