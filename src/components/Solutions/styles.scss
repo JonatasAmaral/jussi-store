@@ -30,3 +30,15 @@
 		gap: 1rem;
 	}
 }
+
+@media screen and (max-width: 1112px) {
+	.solutions .soluctions-list {
+		grid-template-columns: repeat(2, minmax(250px, 350px));
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.solutions .soluctions-list {
+		grid-template-columns: repeat(1, minmax(250px, 350px));
+	}
+}
