@@ -14,7 +14,7 @@ function FooterSocialIcon(props: SocialIconPropsType) {
 
 function Footer(props: PropsType) {
 	return (
-		<div className="footer">
+		<footer className="footer">
 			<a className="seal" href="https://www.wpp.com/">
 				<img src={companySeal} alt="Seal: A wpp company" />
 			</a>
@@ -33,7 +33,7 @@ function Footer(props: PropsType) {
 					icon="linkedin"
 				/>
 			</div>
-		</div>
+		</footer>
 	);
 }
 
