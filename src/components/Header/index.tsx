@@ -1,11 +1,21 @@
 import React, { MouseEvent } from "react";
-import { FiSearch, FiShoppingCart, FiMenu } from "react-icons/fi";
+import { FiSearch, FiShoppingCart, FiMenu, FiUser } from "react-icons/fi";
 
 import Logo from "./Logo";
 
 import "./styles.scss";
 
 export function Header() {
+	const [logged, setLogged] = React.useState(false);
+
+	function handleLogin(e: MouseEvent) {
+		e.preventDefault();
+
+		setTimeout(() => {
+			setLogged((p) => !p);
+		}, 1000);
+	}
+
 	return (
 		<header>
 			<input
@@ -44,8 +54,15 @@ export function Header() {
 				</button>
 			</form>
 
-			<a className="login" href="#">
-				Login
+			<a className="login" href="#" onClick={handleLogin}>
+				{logged ? (
+					<>
+						<FiUser size={20} style={{ paddingRight: 5 }} />
+						Logout
+					</>
+				) : (
+					"Login"
+				)}
 			</a>
 			<button className="button cart">
 				<FiShoppingCart />
