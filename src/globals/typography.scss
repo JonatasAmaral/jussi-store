@@ -1,0 +1,23 @@
+// @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap");
+
+@mixin typography {
+	font-family: "Barlow", sans-serif;
+	font-weight: 500;
+}
+
+@mixin type-paragraph {
+	@include typography;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+@mixin type-large {
+	@include typography;
+	font-size: 2rem;
+	line-height: 2.5rem;
+	font-weight: bold;
+}
+@mixin type-extra-large {
+	@include typography;
+	font-size: 4rem;
+	line-height: normal;
+}
