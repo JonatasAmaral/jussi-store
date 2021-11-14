@@ -1,0 +1,20 @@
+@import "~/globals/colors.scss";
+
+.footer {
+	background-color: $black;
+	color: $white;
+	padding: 1rem 3rem;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+
+	.seal img {
+		width: 145px;
+	}
+
+	.social-icon:nth-child(1n + 2) {
+		margin-left: 1rem;
+	}
+}
