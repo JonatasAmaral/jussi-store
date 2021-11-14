@@ -1,9 +1,15 @@
 import React from "react";
 
+import Banner from "~/components/Banner";
+
 import "./styles.scss";
 
 export function Home() {
-	return <div className="home"></div>;
+	return (
+		<div className="home">
+			<Banner />
+		</div>
+	);
 }
 
 export default Home;
