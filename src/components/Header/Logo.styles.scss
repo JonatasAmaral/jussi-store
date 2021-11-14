@@ -1,0 +1,34 @@
+.logo {
+	svg {
+		.mid {
+			animation: flyin 0.5s ease-in-out forwards;
+		}
+	}
+	.color {
+		path {
+			animation: none;
+		}
+
+		.star {
+			animation: rotate 2s infinite linear;
+		}
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes flyin {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
