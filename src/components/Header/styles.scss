@@ -1,7 +1,11 @@
 @import "~/globals/colors.scss";
 @import "../../globals/typography.scss";
 
-button {
+:root {
+	--header-space: 2rem;
+}
+
+.button {
 	background: none;
 	border: none;
 	border-radius: 0;
@@ -15,9 +19,9 @@ button {
 		position: relative;
 	}
 }
-@supports not (gap: 2rem) {
+@supports not (gap: var(--header-space)) {
 	header > * {
-		margin-left: 2rem;
+		margin-left: var(--header-space);
 	}
 
 	header:first-child {
@@ -30,21 +34,30 @@ header {
 	height: 5rem;
 	width: 100%;
 	box-sizing: border-box;
-	padding: 1rem 2rem;
+	padding: 1rem var(--header-space);
 	display: flex;
 	align-items: center;
 	background-color: $white;
-	gap: 2rem;
+	gap: var(--header-space);
+
+	z-index: 10;
+
+	transition-property: margin, padding, gap;
+	transition-duration: 0.3s;
 
 	position: sticky;
 	top: 0;
+
+	.mob-menu {
+		display: none;
+	}
 
 	.logo {
 		padding: 0.5rem;
 	}
 
 	a:not(.logo),
-	button {
+	.button {
 		color: $black;
 		text-decoration: none;
 		padding: 0;
@@ -77,23 +90,22 @@ header {
 		margin: 0;
 		padding: 0;
 		display: flex;
-		gap: 2rem;
+		gap: var(--header-space);
 	}
 
-	button,
+	.button,
 	input {
 		font: inherit;
 
 		svg {
-			font-size: 1.5rem;
 			vertical-align: bottom;
+			font-size: 1.5rem;
 		}
 	}
 
 	.search {
 		display: flex;
 		align-items: center;
-		padding: 0;
 		border: 1px solid $grey;
 		border-radius: 100px;
 
@@ -112,23 +124,71 @@ header {
 				color: $pink;
 			}
 		}
-		button {
+		.button {
 			display: block;
 			height: 2rem;
+			padding-bottom: 0;
+			padding-top: 0;
+
 			border-top-right-radius: 100px;
 			border-bottom-right-radius: 100px;
-			margin-left: 1rem;
-			padding-top: 0;
-			padding-bottom: 0;
 
 			&:hover,
 			&:focus {
-				background-color: $pink;
+				background: $pink;
 				color: $white;
 				&::after {
 					content: none;
 				}
 			}
 		}
+
+		label,
+		label.button {
+			display: none;
+			.button {
+				&:hover,
+				&:focus {
+					background: none;
+					color: $pink;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1090px) {
+	:root {
+		--header-space: 1rem;
+	}
+}
+@media screen and (max-width: 950px) {
+	header .search:not(:focus-within) {
+		input {
+			overflow: hidden;
+			width: 0px;
+			margin: 0;
+			transition: width 0.3s;
+			flex-shrink: 0;
+			position: absolute;
+			right: 0;
+			background-color: $white;
+		}
+
+		label,
+		label.button {
+			display: block;
+		}
+		.button[type="submit"] {
+			display: none;
+		}
+	}
+}
+@media screen and (max-width: 650px) {
+	header {
+		justify-content: space-around;
+		flex-wrap: wrap;
+		height: auto;
+		position: inherit;
 	}
 }
