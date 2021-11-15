@@ -1,0 +1,44 @@
+@import "~/globals/colors.scss";
+@import "../../globals/typography.scss";
+
+.solutions {
+	box-sizing: border-box;
+	padding: 3rem clamp(0rem, 6%, 10rem);
+
+	h2 {
+		@include type-large;
+		background-color: $white;
+		text-transform: uppercase;
+
+		&::before {
+			content: "//";
+			color: $green;
+			display: inline;
+			top: 0;
+			left: 0;
+			margin-right: 0.25rem;
+			background-color: $white;
+		}
+	}
+
+	.soluctions-list {
+		margin: 0 auto 1rem;
+		max-width: 1400px;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(250px, 350px));
+		justify-content: center;
+		gap: 1rem;
+	}
+}
+
+@media screen and (max-width: 1112px) {
+	.solutions .soluctions-list {
+		grid-template-columns: repeat(2, minmax(250px, 350px));
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.solutions .soluctions-list {
+		grid-template-columns: repeat(1, minmax(250px, 350px));
+	}
+}
