@@ -26,7 +26,7 @@ export function Banner() {
 					A Jüssi é especialista na criação de lojas usando a plataforma VTEX.
 					Precisa criar sua loja ou migrar de plataforma?
 				</p>
-				<a className="button" href="https://jussi.com.br/services.html">
+				<a className="button" href="/#solutions">
 					Veja nossas soluções
 				</a>
 			</div>

@@ -9,7 +9,7 @@ type PropsType = {
 
 export function Solutions(props: PropsType) {
 	return (
-		<section className="solutions">
+		<section id="solutions">
 			<h2>Nossas soluções</h2>
 			<div className="soluctions-list">
 				<SolutionCard num={1} />

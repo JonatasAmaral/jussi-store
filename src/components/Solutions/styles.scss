@@ -1,7 +1,7 @@
 @import "~/globals/colors.scss";
 @import "../../globals/typography.scss";
 
-.solutions {
+#solutions {
 	box-sizing: border-box;
 	padding: 3rem clamp(0rem, 6%, 10rem);
 
@@ -32,13 +32,13 @@
 }
 
 @media screen and (max-width: 1112px) {
-	.solutions .soluctions-list {
+	#solutions .soluctions-list {
 		grid-template-columns: repeat(2, minmax(250px, 350px));
 	}
 }
 
 @media screen and (max-width: 700px) {
-	.solutions .soluctions-list {
+	#solutions .soluctions-list {
 		grid-template-columns: repeat(1, minmax(250px, 350px));
 	}
 }
