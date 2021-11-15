@@ -40,6 +40,7 @@ export function Header() {
 			setHasData(true);
 		} catch (err) {
 			console.error(err);
+			alert(`Nenhum pokemon encontrado relacionado à '${searchQuery}'`);
 		}
 	}
 
