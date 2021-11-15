@@ -143,6 +143,15 @@ header {
 			}
 		}
 
+		&:invalid:focus-within {
+			background-color: rgba(red, 0.2);
+
+			button {
+				color: red;
+				background-color: $grey;
+			}
+		}
+
 		label,
 		label.button {
 			display: none;
@@ -190,5 +199,48 @@ header {
 		flex-wrap: wrap;
 		height: auto;
 		position: inherit;
+	}
+}
+
+header.blur {
+	filter: blur(5px);
+}
+.search-results {
+	z-index: 20;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(black, 0.5);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	button {
+		color: $grey;
+		filter: drop-shadow(0 0 2px $black);
+		font-size: 1.5rem;
+		position: absolute;
+		top: 3rem;
+		right: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: 2px solid currentColor;
+		border-radius: 100px;
+		padding: 0.25rem;
+		cursor: pointer;
+		z-index: 20;
+
+		svg {
+			transition: 0.2s;
+			&:hover,
+			&:focus {
+				transform: rotate(90deg);
+			}
+		}
 	}
 }
