@@ -18,7 +18,8 @@
 		"baseUrl": "./src",
 		"paths": {
 			"~/*": ["./*"]
-		}
+		},
+		"types": ["@types/vite-plugin-react-svg"]
 	},
 	"include": ["./src"]
 }

@@ -1,0 +1,246 @@
+@import "~/globals/colors.scss";
+@import "../../globals/typography.scss";
+
+:root {
+	--header-space: 2rem;
+}
+
+.button {
+	background: none;
+	border: none;
+	border-radius: 0;
+}
+
+@supports not (position: sticky) {
+	body {
+		padding-top: 5rem;
+	}
+	header {
+		position: relative;
+	}
+}
+@supports not (gap: var(--header-space)) {
+	header > * {
+		margin-left: var(--header-space);
+	}
+
+	header:first-child {
+		margin-left: 0;
+	}
+}
+
+header {
+	@include type-paragraph;
+	height: 5rem;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 1rem var(--header-space);
+	display: flex;
+	align-items: center;
+	background-color: $white;
+	gap: var(--header-space);
+
+	z-index: 10;
+
+	transition-property: margin, padding, gap;
+	transition-duration: 0.3s;
+
+	position: sticky;
+	top: 0;
+
+	.mob-menu {
+		display: none;
+	}
+
+	.logo {
+		padding: 0.5rem;
+	}
+
+	a:not(.logo),
+	.button {
+		color: $black;
+		text-decoration: none;
+		padding: 0;
+		outline: none;
+		padding: 0.5rem;
+
+		&:hover,
+		&:focus-within {
+			cursor: pointer;
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				background-color: $black;
+			}
+		}
+	}
+
+	nav {
+		font-weight: 600;
+		flex-grow: 1;
+	}
+	ul,
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: var(--header-space);
+	}
+
+	.button,
+	input {
+		font: inherit;
+
+		svg {
+			vertical-align: bottom;
+			font-size: 1.5rem;
+		}
+	}
+
+	.search {
+		display: flex;
+		align-items: center;
+		border: 1px solid $grey;
+		border-radius: 100px;
+
+		&:focus-within {
+			border-color: $pink;
+		}
+
+		input {
+			padding: 0;
+			margin-left: 0.75rem;
+			background-color: transparent;
+			border: none;
+			outline: none;
+
+			&::placeholder {
+				color: $pink;
+			}
+		}
+		.button {
+			display: block;
+			height: 2rem;
+			padding-bottom: 0;
+			padding-top: 0;
+
+			border-top-right-radius: 100px;
+			border-bottom-right-radius: 100px;
+
+			&:hover,
+			&:focus {
+				background: $pink;
+				color: $white;
+				&::after {
+					content: none;
+				}
+			}
+		}
+
+		&:invalid:focus-within {
+			background-color: rgba(red, 0.2);
+
+			button {
+				color: red;
+				background-color: $grey;
+			}
+		}
+
+		label,
+		label.button {
+			display: none;
+			.button {
+				&:hover,
+				&:focus {
+					background: none;
+					color: $pink;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1090px) {
+	:root {
+		--header-space: 1rem;
+	}
+}
+@media screen and (max-width: 950px) {
+	header .search:not(:focus-within) {
+		input {
+			overflow: hidden;
+			width: 0px;
+			margin: 0;
+			transition: width 0.3s;
+			flex-shrink: 0;
+			position: absolute;
+			right: 0;
+			background-color: $white;
+		}
+
+		label,
+		label.button {
+			display: block;
+		}
+		.button[type="submit"] {
+			display: none;
+		}
+	}
+}
+@media screen and (max-width: 650px) {
+	header {
+		justify-content: space-around;
+		flex-wrap: wrap;
+		height: auto;
+		position: inherit;
+	}
+}
+
+header.blur {
+	filter: blur(5px);
+}
+.search-results {
+	z-index: 20;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(black, 0.5);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	button {
+		color: $grey;
+		filter: drop-shadow(0 0 2px $black);
+		font-size: 1.5rem;
+		position: absolute;
+		top: 3rem;
+		right: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: 2px solid currentColor;
+		border-radius: 100px;
+		padding: 0.25rem;
+		cursor: pointer;
+		z-index: 20;
+
+		svg {
+			transition: 0.2s;
+			&:hover,
+			&:focus {
+				transform: rotate(90deg);
+			}
+		}
+	}
+}

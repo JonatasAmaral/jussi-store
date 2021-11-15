@@ -1,0 +1,45 @@
+@import "~/globals/colors.scss";
+@import "../../globals/typography.scss";
+
+.pokemon-card {
+	@include type-paragraph;
+	background-color: $grey;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	min-width: 200px;
+	position: relative;
+
+	&::after {
+		content: "";
+		border-radius: 8px;
+		position: absolute;
+		border: 5px solid var(--poke-color, $grey-dark);
+		left: 1rem;
+		right: 1rem;
+		top: 1rem;
+		bottom: 1rem;
+	}
+
+	h3 {
+		@include type-large;
+		margin: 0;
+		text-transform: capitalize;
+	}
+	span::before {
+		content: "#";
+		font-size: 0.8rem;
+		color: $grey-dark;
+	}
+
+	h4 {
+		padding-top: 1rem;
+		margin-top: 2rem;
+		margin-bottom: 0;
+		border-top: 1px solid var(--poke-color, $grey-dark);
+	}
+	ul {
+		padding-left: 1rem;
+	}
+}
