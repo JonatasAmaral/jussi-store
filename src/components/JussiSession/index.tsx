@@ -11,7 +11,7 @@ type PropsType = {
 
 export function JussiSession(props: PropsType) {
 	return (
-		<section className="sobre-nos">
+		<section id="sobre-nos">
 			<div className="container">
 				<div className="text">
 					<h3 className="title">Olá, somos a Jüssi</h3>

@@ -50,10 +50,10 @@ export function Header() {
 				<nav>
 					<ul>
 						<li>
-							<a href="https://jussi.com.br/services.html">Nossas soluções</a>
+							<a href="/#solutions">Nossas soluções</a>
 						</li>
 						<li>
-							<a href="https://jussi.com.br/about.html">Conheça a Jüssi</a>
+							<a href="/#sobre-nos">Conheça a Jüssi</a>
 						</li>
 					</ul>
 				</nav>

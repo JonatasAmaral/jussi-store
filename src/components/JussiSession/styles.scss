@@ -1,7 +1,7 @@
 @import "~/globals/colors.scss";
 @import "../../globals/typography.scss";
 
-.sobre-nos {
+#sobre-nos {
 	padding: 4rem 2rem;
 	background-image: linear-gradient(to right, transparent 50%, #f2f2f2 50%);
 
@@ -63,14 +63,14 @@
 }
 
 @media screen and (max-width: 1024px) {
-	.sobre-nos .img {
+	#sobre-nos .img {
 		margin-left: 3.5rem;
 		// max-width: 50%;
 	}
 }
 
 @media screen and (max-width: 700px) {
-	.sobre-nos {
+	#sobre-nos {
 		background-image: linear-gradient(to top, transparent 50%, #f2f2f2 50%);
 
 		.container {
@@ -111,7 +111,7 @@
 }
 
 @media screen and (max-width: 500px) {
-	.sobre-nos .container {
+	#sobre-nos .container {
 		h3 {
 			font-size: 26px;
 			margin-right: 0;

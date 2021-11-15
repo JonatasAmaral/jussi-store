@@ -16,7 +16,7 @@
 		padding-top: 5rem;
 	}
 	header {
-		position: relative;
+		position: fixed;
 	}
 }
 @supports not (gap: var(--header-space)) {
