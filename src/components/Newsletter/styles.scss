@@ -34,6 +34,8 @@
 
 		.wrapper {
 			position: relative;
+			color: currentColor;
+			transition: color 0.2s 0.2s ease-out;
 
 			&::before {
 				content: "";
@@ -108,6 +110,43 @@
 
 			&:focus-within::after {
 				height: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 530px) {
+	.newsletter {
+		padding: 3rem 2rem 5rem;
+
+		h3 {
+			font-size: 1.5rem;
+		}
+		form {
+			max-width: 20rem;
+			align-items: stretch;
+			flex-direction: column;
+
+			.wrapper.email {
+				padding: 0;
+			}
+			.wrapper.send {
+				margin-top: 1rem;
+				&::before {
+					border-radius: 4px !important;
+					height: 100%;
+				}
+				button {
+					width: 100%;
+					color: $black;
+					position: relative;
+					transition: transform 0.2s ease-in-out;
+				}
+				&:hover,
+				&:focus-within {
+					filter: brightness(0.9) contrast(2);
+					transform: translateY(-2px);
+				}
 			}
 		}
 	}
