@@ -1,0 +1,153 @@
+@import "~/globals/colors.scss";
+@import "../../globals/typography.scss";
+
+.newsletter {
+	& {
+		background-color: black;
+		text-align: center;
+		padding: 7em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	h3 {
+		@include type-large;
+		text-transform: uppercase;
+		color: $white;
+		max-width: 500px;
+		width: 100%;
+	}
+
+	form {
+		width: 100%;
+		color: $green;
+		max-width: 660px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+
+		&:invalid:focus-within {
+			color: mix(white, red, 25%);
+		}
+
+		.wrapper {
+			position: relative;
+			color: currentColor;
+			transition: color 0.2s 0.2s ease-out;
+
+			&::before {
+				content: "";
+				position: absolute;
+				background-color: currentColor;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				transition: height 0.3s ease-in-out, border-radius 0.3s 0.1s ease-out;
+			}
+
+			&.email {
+				input {
+					color: $white;
+				}
+				&:focus-within::before {
+					height: 4px;
+				}
+			}
+			&.send {
+				&:focus-within,
+				&:hover {
+					button {
+						color: $black;
+					}
+					&::before {
+						height: 100%;
+						border-radius: 4px;
+						border-bottom-left-radius: 0;
+					}
+				}
+			}
+		}
+
+		.wrapper.email {
+			flex: 1;
+			text-align: left;
+			padding-right: 1rem;
+		}
+		input,
+		button {
+			@include type-paragraph;
+			background: none;
+			color: inherit;
+			border: none;
+			border-radius: 0;
+			position: relative;
+			z-index: 1;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		input {
+			padding: 0.5rem 0.25rem;
+			width: 100%;
+			flex-grow: 1;
+			outline: none;
+
+			&::placeholder {
+				color: currentColor;
+			}
+		}
+
+		button {
+			padding: 0.5rem 0.5rem;
+			text-transform: uppercase;
+			cursor: pointer;
+			font-weight: bold;
+
+			&:focus-within::after {
+				height: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 530px) {
+	.newsletter {
+		padding: 3rem 2rem 5rem;
+
+		h3 {
+			font-size: 1.5rem;
+		}
+		form {
+			max-width: 20rem;
+			align-items: stretch;
+			flex-direction: column;
+
+			.wrapper.email {
+				padding: 0;
+			}
+			.wrapper.send {
+				margin-top: 1rem;
+				&::before {
+					border-radius: 4px !important;
+					height: 100%;
+				}
+				button {
+					width: 100%;
+					color: $black;
+					position: relative;
+					transition: transform 0.2s ease-in-out;
+				}
+				&:hover,
+				&:focus-within {
+					filter: brightness(0.9) contrast(2);
+					transform: translateY(-2px);
+				}
+			}
+		}
+	}
+}
