@@ -155,9 +155,10 @@ header {
 		label,
 		label.button {
 			display: none;
-			.button {
-				&:hover,
-				&:focus {
+			&:hover,
+			&:focus {
+				cursor: pointer;
+				.button {
 					background: none;
 					color: $pink;
 				}
@@ -173,6 +174,7 @@ header {
 }
 @media screen and (max-width: 950px) {
 	header .search:not(:focus-within) {
+		border-color: transparent;
 		input {
 			overflow: hidden;
 			width: 0px;
