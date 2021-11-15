@@ -1,6 +1,6 @@
 import React from "react";
 
-import LogoSVG from "~/logo-full.svg";
+import LogoSVG from "~/logo.svg";
 
 import "./Logo.styles.scss";
 
