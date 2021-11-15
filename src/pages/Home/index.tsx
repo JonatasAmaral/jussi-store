@@ -1,5 +1,6 @@
 import React from "react";
 
+import ContactInfo from "~/components/ContactInfo";
 import JussiSession from "~/components/JussiSession";
 import Newsletter from "~/components/Newsletter";
 import Footer from "~/components/Footer";
@@ -9,6 +10,7 @@ import "./styles.scss";
 export function Home() {
 	return (
 		<div className="home">
+			<ContactInfo />
 			<JussiSession />
 			<Newsletter />
 			<Footer />

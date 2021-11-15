@@ -61,6 +61,7 @@
 				&:hover {
 					button {
 						color: $black;
+						transition: color 0.2s 0.1s ease-out;
 					}
 					&::before {
 						height: 100%;
