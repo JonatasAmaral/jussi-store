@@ -1,5 +1,6 @@
 import React from "react";
 
+import LogoBar from "~/components/LogoBar";
 import Solutions from "~/components/Solutions";
 import ContactInfo from "~/components/ContactInfo";
 import JussiSession from "~/components/JussiSession";
@@ -11,6 +12,7 @@ import "./styles.scss";
 export function Home() {
 	return (
 		<div className="home">
+			<LogoBar />
 			<Solutions />
 			<ContactInfo />
 			<JussiSession />
