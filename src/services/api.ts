@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const api = axios.create({ baseURL: "https://pokeapi.co/api/v2/" });
 
-type pokemonIdentifier = { name: string } | { id: number };
+type pokemonIdentifier = { name?: string; id?: number };
 export async function findPokemon(identifier: pokemonIdentifier) {
 	const response = await api.get(`pokemon/${identifier.id || identifier.name}`);
 	return response.data;
