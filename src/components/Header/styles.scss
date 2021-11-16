@@ -48,6 +48,18 @@ header {
 	position: sticky;
 	top: 0;
 
+	.header-menu {
+		display: flex;
+		justify-content: center;
+		gap: var(--header-space);
+		width: 100%;
+		align-items: center;
+	}
+	.wrapper {
+		display: flex;
+		gap: var(--header-space);
+	}
+
 	.mob-menu {
 		display: none;
 	}
@@ -198,12 +210,27 @@ header {
 @media screen and (max-width: 650px) {
 	header {
 		justify-content: space-around;
-		flex-wrap: wrap;
 		height: auto;
-		position: inherit;
+		flex-wrap: wrap;
+
+		#isMenuOpen:checked + .header-menu {
+			display: none;
+		}
+
+		.header-menu {
+			flex-wrap: wrap;
+
+			nav {
+				flex-grow: 0;
+			}
+		}
+		.mob-menu {
+			display: block;
+		}
 	}
 }
 
+/* search results */
 header.blur {
 	filter: blur(5px);
 }
