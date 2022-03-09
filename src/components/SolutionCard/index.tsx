@@ -12,7 +12,7 @@ export function SolutionCard({ num }: PropsType) {
 			<div className="picture">
 				<span>P{num}</span>
 			</div>
-			<h5>Nome do produto #{num}</h5>
+			<h4>Nome do produto #{num}</h4>
 			<p>Descrição do produto #{num}</p>
 			<ul>
 				<li>Feature 1</li>
